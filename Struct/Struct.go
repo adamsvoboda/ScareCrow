@@ -504,6 +504,7 @@ func Binary() string {
 	
 
 	func {{.Variables.Console}}(show bool) {
+	/*
 		{{.Variables.getWin}} := syscall.NewLazyDLL("kernel32.dll").NewProc("GetConsoleWindow")
 		{{.Variables.showWin}} := syscall.NewLazyDLL("user32.dll").NewProc("ShowWindow")
 		{{.Variables.hwnd}}, _, _ := {{.Variables.getWin}}.Call()
@@ -517,6 +518,7 @@ func Binary() string {
 		   var {{.Variables.SW_HIDE}} uintptr = 0
 		   {{.Variables.showWin}}.Call({{.Variables.hwnd}}, {{.Variables.SW_HIDE}})
 		}
+	*/
 	}
 	
 	func {{.Variables.Versionfunc}}() string {
@@ -1563,6 +1565,7 @@ func {{.Variables.PKCS5UnPadding}}({{.Variables.src}} []byte) []byte {
 
 
 func {{.Variables.Console}}(show bool) {
+/*
 	{{.Variables.getWin}} := syscall.NewLazyDLL("kernel32.dll").NewProc("GetConsoleWindow")
 	{{.Variables.showWin}} := syscall.NewLazyDLL("user32.dll").NewProc("ShowWindow")
 	{{.Variables.hwnd}}, _, _ := {{.Variables.getWin}}.Call()
@@ -1576,6 +1579,7 @@ func {{.Variables.Console}}(show bool) {
 	   var {{.Variables.SW_HIDE}} uintptr = 0
 	   {{.Variables.showWin}}.Call({{.Variables.hwnd}}, {{.Variables.SW_HIDE}})
 	}
+*/
 }
 
 func {{.Variables.Versionfunc}}() string {
