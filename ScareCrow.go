@@ -78,7 +78,7 @@ func execute(opt *FlagOptions, name string) string {
 		name = limelighter.FileProperties(name, opt.configfile)
 	}
 	if opt.LoaderType == "binary" {
-		cmd = exec.Command(bin, "GOROOT_FINAL=/dev/null", "GOOS=windows", "GOARCH=amd64", "go", "build", "-a", "-trimpath", "-ldflags", "-H=windowsgui", "-s -w", "-o", ""+name+".exe")
+		cmd = exec.Command(bin, "GOROOT_FINAL=/dev/null", "GOOS=windows", "GOARCH=amd64", "go", "build", "-a", "-trimpath", "-ldflags", "-H=windowsgui -s -w", "-o", ""+name+".exe")
 	} else {
 		cmd = exec.Command(bin, "GOOS=windows", "GOARCH=amd64", "CGO_ENABLED=1", "CC=x86_64-w64-mingw32-gcc", "CXX=x86_64-w64-mingw32-g++", "go", "build", "-a", "-trimpath", "-ldflags", "-w -s", "-o", ""+name+".dll", "-buildmode=c-shared")
 	}
